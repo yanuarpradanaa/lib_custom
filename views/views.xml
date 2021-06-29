@@ -1,0 +1,242 @@
+<odoo>
+  <data>
+    
+    <!-- Tree view Media Movement -->
+    <record model="ir.ui.view" id="lib_custom.media_movement_view">
+      <field name="name">lib_custom media_movement_tree</field>
+      <field name="model">op.media.movement</field>
+      <field name="inherit_id" ref="openeducat_library.view_op_media_movement_tree"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='media_unit_id']" position="attributes">
+          <attribute name="string">Bagian Cetakan</attribute>
+        </xpath>
+        <xpath expr="//field[@name='media_id']" position="attributes">
+          <attribute name="string">Nama Cetakan</attribute>
+        </xpath>
+        <xpath expr="//field[@name='media_type_id']" position="attributes">
+          <attribute name="string">Tipe Cetakan</attribute>
+        </xpath>
+        <xpath expr="//field[@name='media_type_id']" position="after">
+          <field name="unit_type" string="Pisau/Klise"/>
+        </xpath>
+        <xpath expr="//field[@name='student_id']" position="attributes">
+          <attribute name="string">Operator</attribute>
+        </xpath>
+
+      </field>
+    </record>
+
+    <!-- Form view Media Movement -->
+    <record model="ir.ui.view" id="lib_custom.media_movement_form_view">
+      <field name="name">lib_custom media_movement_form</field>
+      <field name="model">op.media.movement</field>
+      <field name="inherit_id" ref="openeducat_library.view_op_media_movement_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='student_id']" position="attributes">
+          <attribute name="string">Operator</attribute>
+        </xpath>
+        <xpath expr="//field[@name='media_unit_id']" position="attributes">
+          <attribute name="string">Bagian Cetakan</attribute>
+        </xpath>
+        <xpath expr="//field[@name='media_id']" position="attributes">
+          <attribute name="string">Nama Cetakan</attribute>
+        </xpath>
+        <xpath expr="//field[@name='media_type_id']" position="attributes">
+          <attribute name="string">Tipe Cetakan</attribute>
+        </xpath>
+        <xpath expr="//field[@name='media_type_id']" position="after">
+          <field name="unit_type" string="Pisau/Klise"/>
+        </xpath>
+        <xpath expr="//field[@name='library_card_id']" position="attributes">
+          <attribute name="string">Operator Cards</attribute>
+        </xpath>
+
+      </field>
+    </record>
+
+
+    <!-- Form View Media unit -->
+    <record model="ir.ui.view" id="lib_custom.form_view">
+      <field name="name">lib_custom list</field>
+      <field name="model">op.media.unit</field>
+      <field name="inherit_id" ref="openeducat_library.view_media_unit_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='media_id']" position="attributes">
+          <attribute name="string">Nama Cetakan</attribute>
+        </xpath>
+        <xpath expr="//field[@name='media_type_id']" position="attributes">
+          <attribute name="string">Tipe Cetakan</attribute>
+        </xpath>
+
+        <xpath expr="//field[@name='media_type_id']" position="after">
+          <field name="unit_type" string="Pisau/Klise"/>
+        </xpath>
+
+        <!-- <xpath expr="//field[@name='media_type_id']" position="after">
+          <field name="active" string="Active?"/>
+        </xpath> -->
+
+      </field>
+    </record>
+
+    <!-- Tree view Media unit -->
+    <record model="ir.ui.view" id="lib_custom.tree_view">
+      <field name="name">lib_custom tree_list</field>
+      <field name="model">op.media.unit</field>
+      <field name="inherit_id" ref="openeducat_library.view_media_unit_tree"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='media_id']" position="attributes">
+          <attribute name="string">Nama Cetakan</attribute>
+        </xpath>
+        <xpath expr="//field[@name='media_type_id']" position="attributes">
+          <attribute name="string">Tipe Cetakan</attribute>
+        </xpath>
+        <xpath expr="//field[@name='media_type_id']" position="after">
+          <field name="unit_type" string="Pisau/Klise"/>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- Tree view Nama Cetakan -->
+    <record model="ir.ui.view" id="lib_custom.tree_view_nama_cetakan">
+      <field name="name">lib_custom tree_list_cetakan</field>
+      <field name="model">op.media</field>
+      <field name="inherit_id" ref="openeducat_library.view_op_media_tree"/>
+      <field name="arch" type="xml">
+
+        <xpath expr="//field[@name='media_type_id']" position="attributes">
+          <attribute name="string">Tipe Cetakan</attribute>
+        </xpath>
+        <xpath expr="//field[@name='edition']" position="attributes">
+          <attribute name="string">Lokasi</attribute>
+        </xpath>
+        <xpath expr="//field[@name='publisher_ids']" position="attributes">
+          <attribute name="string">Customers</attribute>
+        </xpath>
+        <xpath expr="//field[@name='author_ids']" position="attributes">
+          <attribute name="string">Designer Grafis</attribute>
+        </xpath>
+
+      </field>
+    </record> 
+
+    <!-- Form View Nama Cetakan -->
+    <record model="ir.ui.view" id="lib_custom.form_view_nama_cetakan">
+      <field name="name">lib_custom list cetakan</field>
+      <field name="model">op.media</field>
+      <field name="inherit_id" ref="openeducat_library.view_op_media_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='author_ids']" position="attributes">
+          <attribute name="string">Designer Grafis</attribute>
+        </xpath>
+        <xpath expr="//field[@name='edition']" position="attributes">
+          <attribute name="string">Lokasi</attribute>
+        </xpath>
+        <xpath expr="//field[@name='media_type_id']" position="attributes">
+          <attribute name="string">Tipe Cetakan</attribute>
+        </xpath>
+        <xpath expr="//field[@name='publisher_ids']" position="attributes">
+          <attribute name="string">Customers</attribute>
+        </xpath>
+        <xpath expr="//notebook/page[@name='media_queue_requests']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>
+
+      </field>
+    </record>
+
+
+    <!-- Tree view Lib Card / Operator -->
+    <record model="ir.ui.view" id="lib_custom.tree_view_lib_card">
+      <field name="name">lib_custom tree_lib card</field>
+      <field name="model">op.library.card</field>
+      <field name="inherit_id" ref="openeducat_library.view_op_library_card_tree"/>
+      <field name="arch" type="xml">
+
+        <xpath expr="//field[@name='partner_id']" position="attributes">
+          <attribute name="string">Operator</attribute>
+        </xpath>
+        <xpath expr="//field[@name='library_card_type_id']" position="attributes">
+          <attribute name="string">Internal/External</attribute>
+        </xpath>
+        <!--<xpath expr="//field[@name='library_card_type_id']" position="after">
+          <field name="active" string="Active ?"/>
+        </xpath>-->
+      </field>
+    </record>
+
+
+
+    <!-- Form View Library Card / Operator -->
+    <record model="ir.ui.view" id="lib_custom.form_view_lib_card">
+      <field name="name">lib_custom_lib_card</field>
+      <field name="model">op.library.card</field>
+      <field name="inherit_id" ref="openeducat_library.view_op_library_card_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='library_card_type_id']" position="attributes">
+          <attribute name="string">Internal/External</attribute>
+        </xpath>
+        <xpath expr="//field[@name='student_id']" position="attributes">
+          <attribute name="string">Operator</attribute>
+        </xpath>
+        <!--<xpath expr="//field[@name='student_id']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>-->
+        <!--<xpath expr="//field[@name='type']" position="attributes">
+          <attribute name="invisible">1</attribute>
+        </xpath>-->
+
+        <!--<xpath expr="//field[@name='partner_id']" position="after">
+          <field name="active" string="Active ?"/>
+        </xpath>-->
+
+      </field>
+    </record>
+
+
+    <!-- Tree view Publisher / Customer -->
+    <record model="ir.ui.view" id="lib_custom.tree_view_publisher_cust">
+      <field name="name">lib_custom_tree_publisher</field>
+      <field name="model">op.publisher</field>
+      <field name="inherit_id" ref="openeducat_library.view_op_publisher_tree"/>
+      <field name="arch" type="xml">
+
+        <xpath expr="//field[@name='media_ids']" position="attributes">
+          <attribute name="string">Nama Cetakan</attribute>
+        </xpath>
+        
+      </field>
+    </record>
+
+
+    <!-- Tree view Author / Designer -->
+    <record model="ir.ui.view" id="lib_custom.tree_view_author_tree">
+      <field name="name">lib_custom_tree_author_design</field>
+      <field name="model">op.author</field>
+      <field name="inherit_id" ref="openeducat_library.view_op_author_tree"/>
+      <field name="arch" type="xml">
+
+        <xpath expr="//field[@name='address']" position="attributes">
+          <attribute name="string">Active</attribute>
+        </xpath>
+
+      </field>
+    </record>
+
+
+    <!-- Form View Author / Designer -->
+    <record model="ir.ui.view" id="lib_custom.form_view_designer">
+      <field name="name">lib_custom author_design</field>
+      <field name="model">op.author</field>
+      <field name="inherit_id" ref="openeducat_library.view_op_author_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='address']" position="attributes">
+          <attribute name="string">Active ?</attribute>
+        </xpath>
+
+      </field>
+    </record>
+
+
+  </data>
+</odoo>
